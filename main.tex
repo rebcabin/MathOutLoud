@@ -68,7 +68,7 @@ Work in logarithms base 2. Rows and columns sum to zero; corner sub-boxes sum to
         1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\
         0 & 1 & 1 & 0 & 1 & 1 & 0 & 0 & 0 \\
         0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 0 \\
-        9 & 9 & 9 & 9 & 1 & 1 & 0 & 1 & 1 
+        0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 
     \end{NiceTabular}\right]
     \begin{bmatrix}
         a \\ b \\ c \\ \hline
@@ -145,6 +145,37 @@ Symmetric arguments around the box, plus inspection of the corner boxes show the
     $2$   & $1/4$ &   $2$  \\ \hline  
 \end{NiceTabular}
 \end{equation}
+
+\section{Problem 2010 6-7 \#3}
+
+\begin{framed}
+\begin{quote}
+    Each letter in HAGRID's name represents a  distinct digit between 0 and 9 [inclusive both ends]. Show that 
+    \begin{equation}
+        HAGRID\times{}H\times{}A\times{}G\times{}R\times{}I\times{}D
+    \end{equation}
+    [the "big product"] is divisible by 3. [example elided]
+\end{quote}
+\end{framed}
+
+\subsection{Solution [not novel]}
+
+\begin{quote}
+\emph{I derived this solution without peeking at the solution section of the book, but it's not novel; it's the same as the solution in the book, just couched in the language of modular arithmetic.}
+\end{quote}
+
+The residues, mod 3, of the digits between 0 and 9, inclusive both ends, are
+
+\begin{tabular}{cccccccccc}
+     0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9  \\ \hline
+     0 & 1 & 2 & 0 & 1 & 2 & 0 & 1 & 2 & 0
+\end{tabular} 
+
+Background facts: The residue of a product is the residue of the product of residues. Ditto for a sum. A number is divisible by 3 iff its residue, mod 3, is zero.
+
+The big product has residue 0 unless all the digits we choose have non-zero residues, so the only choices of interest are 1, 2, 4, 5, 7, 8, with residues 1 and 2 three times each, in some permutation. 
+
+Pick one permutation, say $124,578$. The residue, mod 3, of $124,578$ is the sum of the residues 1 and 2, three times each, because the residue of any power of 10 is 1 and $124,578$ is a polynomial in powers of 10. That residue is 9, congruent to 0 mod 3. The same residue obtains for any permutation of those digits.
 
 %\section{Introduction}
 
