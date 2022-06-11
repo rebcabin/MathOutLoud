@@ -22,7 +22,7 @@
 \maketitle
 
 \begin{abstract}
-I propose some novel solutions to the problems in the book "Math out Loud" \cite{MOL21}. By "novel," I mean, only, "different from the solutions presented in the book," not necessarily novel in any larger sense. 
+I propose some novel solutions to the problems in the book ``Math out Loud'' \cite{MOL21}. By ``novel,'' I mean, only, ``different from the solutions presented in the book,'' not necessarily novel in any larger sense. I prepare each solution before looking at the book, then check it against the book, marking the proposal as novel or not according to my judgment. 
 \end{abstract}
 
 \section{Problem 2010 6-7 \#2}
@@ -108,7 +108,7 @@ For instance, from around the top, right, and bottom edges:
     \label{eqn:cf} cf = hg &= 1/i
 \end{align}
 
-\noindent and from the two left corner sub-boxes:
+\noindent and, from the two left corner sub-boxes:
 
 \begin{align}
     \label{eqn:de} ab = gh &= 2/de 
@@ -116,7 +116,7 @@ For instance, from around the top, right, and bottom edges:
 
 \noindent imply $c=i$. Note that all the numbers are positive so all ratios and reciprocals are defined.
 
-Symmetric arguments around the box, plus inspection of the corner boxes show the form of the grid must be 
+Symmetric arguments around the box, plus inspection of the corner boxes, show the form of the grid must be 
 
 \begin{equation}
 \label{eqn:the-last-grid}
@@ -128,7 +128,7 @@ Symmetric arguments around the box, plus inspection of the corner boxes show the
 \end{NiceTabular}
 \end{equation}
 
-\noindent The product of the (values in the) middle column reveals:
+\noindent The product of the (values in the) middle column (or of the middle row) reveals:
 
 \begin{equation}
     2/a = 1
@@ -176,6 +176,27 @@ Background facts: The residue of a product is the residue of the product of resi
 The big product has residue 0 unless all the digits we choose have non-zero residues, so the only choices of interest are 1, 2, 4, 5, 7, 8, with residues 1 and 2 three times each, in some permutation. 
 
 Pick one permutation, say $124,578$. The residue, mod 3, of $124,578$ is the sum of the residues 1 and 2, three times each, because the residue of any power of 10 is 1 and $124,578$ is a polynomial in powers of 10. That residue is 9, congruent to 0 mod 3. The same residue obtains for any permutation of those digits.
+
+\section{Problem 2010 6-7 \#4}
+
+\begin{framed}
+\begin{quote}
+    You walk into a room and find five boxes sitting on a table. Each box 
+    contains some number of coins, and you can see how many coins are in 
+    each box. In the corner of the room, there is a large pile of coins. You 
+    can take two coins at a time from the pile and place them in different
+    boxes. If you can add coins to boxes in this way as many times as you 
+    like, can you guarantee that each box on the table will eventually 
+    contain the same number of coins?
+\end{quote}
+\end{framed}
+
+\subsection{Novel Solution}
+
+It is always possible. Here is an algorithm:
+
+Let the initial target number be $S$. All boxes start out with a count $C_i\le{}S,i\in{1..5}$. Ignore the trivial case where all boxes start out with $S$. Sort the boxes so that $i=5$ has the largest number of coins, $C_5$. Fill up box $5$, putting partner coins in box $4$, and put box $5$ to one side, say the left. Now box $4$ either has $S$ coins, or needs more. Fill up box $4$, putting partner coins in box $3$, and put box $3$ to the left. Repeat with boxes $3$ and $2$. We now have box $1$ remaining on the right, and its count is potentially short. If the shortage is an even number $2n$, set the new target as $S+2n$. Put $2n$ in box $1$ whilst putting $n$ in box $2$ and $n$ in box $3$. Now put $n$ more in boxes $2$ and $3$, and $2n$ in each of boxes $4$ and $5$. All boxes now have $S+2n$. If the shortage is an odd number, $2n+1$, set the new target as $S+4n+2$. The shortage is now an even number, a case already handled.
+
 
 %\section{Introduction}
 
